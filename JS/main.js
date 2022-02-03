@@ -253,7 +253,9 @@
 // удалите последнюю букву каждого слова
 // выведите все слова, которые начинаются на 'р'
 
-// let s ="Срееднее арифметическое —    разновидность среднего значения. Определяется как число, равное     сумме всех чисел множества, делённой на     их количество. Является    одной из наиболее распространённых мер центральной тенденции"
+// let s ="Срееднее арифметическое —    разновидность среднего значения. Определяется как число, равное 
+//сумме всех чисел множества, делённой на их количество. Является одной из наиболее распространённых мер 
+//центральной тенденции"
 // s = s.replaceAll('  ', ' ');
 // s = s.replaceAll('е', 'и');
 // let arr = s.split(' ');
@@ -436,14 +438,18 @@ function Aquarium(fishs = []){
         this.fishs.forEach(b=> b.print())
         console.log('--------');
     };
-    this.dead = function(name) {
-        this.fishs = fishs.splice(fishs.indexOf(this.fishs.name == name),1);
+    this.sheDied = function(name) {
+        this.fishs = this.fishs.filter( n => n.name == name)
+        console.log('sheDied')
     };
+    this.liveFish = function(name) {  // ????????????????
+        this.fishs = this.fishs.splice(this.fishs.indexOf(sheDied(name)),1);
+    }
     this.speedLimit = function (limit){
-        this.fishs.filter( i => i.speed > limit);
+        this.fishs = this.fishs.filter( i => i.speed > +limit);
     };
     this.onlyPredator = function (){
-        this.fishs.filter( i => i.predator == 'yes');
+        this.fishs = this.fishs.filter( i => i.predator == 'yes');
     };
     this.nameFish = function() {
         this.fishs.sort((n1, n2) => {if (n1.name > n2.name) {
@@ -461,61 +467,16 @@ function Aquarium(fishs = []){
     }
 };
 
-let fish1 = new Fish('Perch', 'gray', 'midle', 12, 'yes');
-let fish2 = new Fish('Amphiprion', 'orange', 'small', 9, 'no');
-let fish3 = new Fish('Guppy', 'multi-color', 'small', 9, 'no');
-let fish4 = new Fish('Shark', 'dark gray', 'big', 25, 'yes');
-let fish5 = new Fish('Piranhas', 'gray-blue', 'small', 19, 'yes');
-let fish6 = new Fish('Piranhas', 'gray-blue', 'small', 19, 'yes');
-let fish7 = new Fish('Piranhas', 'gray-blue', 'small', 19, 'yes');
+let fish1 = new Fish('Perch', 'gray', 'midle',12, 'yes');
+let fish2 = new Fish('Amphiprion', 'orange', 'small',13, 'no');
+let fish3 = new Fish('Guppy', 'multi-color', 'small',9, 'no');
+let fish4 = new Fish('Shark', 'dark gray', 'big',25, 'yes');
+let fish5 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
+let fish6 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
+let fish7 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
 
 const fishs = [fish1, fish2, fish3, fish4, fish5];
-
 const aquarium = new Aquarium(fishs);
 
-aquarium.onlyPredator();
+aquarium.liveFish('Shark');
 aquarium.show();
-
-
-//!!!!!!!!!!!!!!!!!!!!!!!
-
-// function Book(author, title, year, pages){
-//     this.author = author;
-//     this.title = title;
-//     this.year = year;
-//     this.pages = pages;
-//     this.print = function (){
-//         console.log(`Author: ${this.author}: '${this.title}' - ${this.pages}, ${this.year}`);
-//     };
-// }
- 
-// function Library(books=[]){
-//     this.books = books;
-//     this.add = function (book){
-//         this.books.push(book);
-//     };
-//     this.show = function (){
-//         this.books.forEach(b=> b.print())
-//         console.log('--------');
-//     };
-//     this.findByYear = function (year){
-//         return this.books.find( book => book.year === year);
-//     };
-//     // this.deleteAllByYear = function (year){
-//     //     this.books = this.books.filter( b=> b.year !== year )
-//     // }
- 
-// }
-// const book1 = new Book('Author1', 'title1', 2000, 120);
-// const book2 = new Book('Author2', 'title2', 2000, 90);
-// const books = [book2, book1];
- 
-// const library = new Library(books)
-// const book3 = new Book('Author3', 'title3', 2001, 100);
-// library.add(book3);
-
-// // const finded = library.findByYear(2003);
-// library.show();
-// // library.deleteAllByYear(2000);
-// // library.show();
-
