@@ -1,0 +1,271 @@
+@media screen and (max-width:1025px) {
+    section{
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+    }
+    .body-img{
+        position: relative;
+        height: auto;
+        max-width: 100%;
+        right: 0;
+        display: grid;
+        justify-content: center;
+    }
+
+    .body-menu{
+        width: 90%;
+        position: relative;
+        display: grid;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 10%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .body-bottom{
+        display: flex;
+        justify-content: center;
+    }
+
+    footer{
+        bottom: 0px;
+        position: absolute;
+        width: 100%;
+        margin: 0px;
+    }
+
+    .footer-menu{
+        margin: 0 5%;
+        width: 90%;
+    }
+
+    .navigation{
+        padding: 15px 2%;
+    }
+
+    .nav ul li{
+        padding: 0px 10px;
+    }
+
+    .container{
+        margin: 2% 5%;
+    }
+
+    .okno-countainer_1 div h3{
+        font-family: Karla;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 31px;
+        line-height: 36px;
+        text-align: left;
+    }
+
+    .okno-pokemon{
+        width: 97vw;
+    }
+}
+
+@media screen and (max-width:740px) {
+
+    .nav{
+        display: none;
+    }
+
+    .body-img img{
+        overflow: hidden;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .body-text{
+        margin: 10px 0;
+    }
+
+    .body-h1 h1{
+        font-family: Karla;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 49px;
+        text-align: center;
+        letter-spacing: 4px;
+
+        color: #000000;
+    }
+
+    .body-info h2{
+        font-family: Karla;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    .body-bottom a{
+        padding: 18px 80px;
+    }
+
+    .body-pockemon{
+        display: block;
+        height: 780px;
+    }
+
+    .pockemon-card{
+        max-width: 100%;
+    }
+
+    .pock-img_1, 
+    .pock-img_2, 
+    .pock-img_3, 
+    .pock-img_4, 
+    .pock-img_5, 
+    .pock-img_6, 
+    .pock-img_7, 
+    .pock-img_8, 
+    .pock-img_9{
+        width: 65%;
+    }
+
+    .pockemon-slider{
+        height: auto;
+        margin-right: 0px;
+    }
+
+    .okno-pokemon{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #okno{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .okno-pokemon{
+        display: block;
+    }
+
+    .okno-pic{
+        width: 96vw;
+        height: auto;
+        box-sizing: content-box;
+        padding-top: 20%;
+    }
+
+    .okno-img{
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .okno-img{
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .okno-TTX-1_Name{
+        position: absolute;
+        top: 5%;
+        width: 95%;
+    }
+
+    .okno-TTX-1_Name p{
+        opacity: 1;
+        left: -200px;
+    }
+
+    .okno_popup{
+        opacity: 1;
+        left: 0;
+    }
+
+    .okno-countainer{
+        height: 100%;
+        width: auto;   
+    }
+
+    .okno-TTX{
+        width: 100%;
+        height: 50%;
+    }
+
+    .okno-countainer{
+        height: 80%;
+        width: 95%;
+        display: grid;
+        margin: 0 auto;
+        align-content: center;
+        position: relative;
+    }
+
+    .okno-countainer_1{
+        height: 46%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .okno-countainer_1 div{
+        width: 87%;
+        height: 43%;
+        align-content: space-around;
+        display: grid;
+
+    }
+
+    .okno-countainer_1 div h3{
+        font-family: Karla;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 31px;
+        line-height: 36px;
+        text-align: left;
+    }
+
+    .okno-countainer_2{
+        height: 50%;
+        display: grid;
+        margin: 0 auto;
+        justify-content: initial;
+        bottom: 20%;
+    }
+
+    .okno-countainer_2-healthy{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .okno-countainer_2-experience{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .okno-countainer_3{
+        bottom: 0%;
+    }
+
+    .okno-countainer_3-defence,
+    .okno-countainer_3-attack,
+    .okno-countainer_3-spAttack,
+    .okno-countainer_3-spDefense{
+        padding: 0;
+        width: 23%;
+        height: 87px;
+        align-content: center;
+        display: grid;
+    }
+
+    .close{
+        z-index: 1001;
+        right: auto;
+        bottom: auto;
+        left: 5px;
+        top: -130px;
+        padding: 5px 5px;
+        border-radius: 50%;
+    }
+}

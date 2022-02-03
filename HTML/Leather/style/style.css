@@ -1,0 +1,277 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../image/background.png");
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+ul{
+    list-style: none;
+}
+
+.intro{
+    display: flex;
+    height: 838px;
+    width: 100%;
+}
+
+.intro-img{
+    display: flex;
+    height: 838px;
+    min-width: 100%;
+    
+    position: absolute;
+    z-index: 0;
+}
+
+.intro-img img{
+    height: 838px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.intro-nav{
+    height: 91px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 1;
+
+}
+
+.logo{
+    margin-left: 60px;
+    margin-right: 62px;
+}
+
+.intro-nav-tag{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.intro-navigation ul{
+display: flex;
+color: #BCBCBC;
+}
+
+.intro-navigation ul li{
+    padding-right: 34px;
+}
+
+.intro-navigation ul li a{
+    transition: .3s;
+}
+
+.intro-navigation ul li a:hover{
+    border-bottom: 5px ridge #4D8A00;
+    padding-bottom: 7px;
+    transition: .3s;
+}
+
+
+.intro-social ul{
+    justify-content: flex-end;
+    display: flex;
+    margin-right: 60px;
+}
+.intro-social ul li{
+    padding-left: 24px;
+}
+
+.intro-social ul li a:hover{
+    transform: translateY(-32px);
+}
+
+.intro-h1{
+    width: 756px;
+    height: 151px; 
+    position: absolute;
+    left: 56px;
+    z-index: 1;
+    top: 343px; 
+    color: #F2F2F2;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+/* работаем с main */
+
+.main-start{
+    height: auto;
+    width: 100%;
+    
+    position: absolute;
+}
+
+.main-start h1{
+    text-transform: uppercase;
+    color: #D8D8D8;
+    margin-top: 87px ;
+    margin-left: 60px;
+    width: 650px;
+    height: 46px;
+    margin-bottom: 36px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+}
+
+.main-text{
+    margin-left: 60px;
+    height: 164px;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 213.4%;
+
+    color: #D8D8D8;
+}
+
+.main-intro{
+    
+    width: 447px;
+    height: 46px;
+    left: 56px;
+}
+
+/* работаем с Catalog */
+
+.catalog{
+    position: absolute;
+    margin-left: 56px;
+    margin-bottom: 64px;
+    margin-top: 69px;
+}
+
+.catalog-h3 h3{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+    text-transform: uppercase;
+
+    color: #D8D8D8;
+}
+
+.catalog-nav{
+    width: 297.94px;
+    height: 378.66px;
+    border: 0px solid black;
+    border-radius: 10px;
+    
+}
+
+.catalog-img{
+    object-fit: hidden;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.catalog-tag{
+    position: absolute;
+    justify-content: end;
+    margin-top: 19.75px;
+    margin-right: 16px;
+}
+
+.catalog-name{
+    position: absolute;
+}
+
+.catalog-order{
+    position: absolute;
+}
+
+.catalog-navigation{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px 20px;
+    margin-top: 29px;
+}
+
+.catalog-name{
+    margin-top: 319px;
+    margin-left: 34px;
+}
+
+.catalog-tag-new{
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 189px;
+    padding: 8px;
+    border: 0px;
+    background-color: #4D8A00;
+    border-radius: 20px;
+    align-items: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #E0E0E0;  
+}
+
+.catalog-tag-sale{
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 189px;
+    padding: 8px;
+    border: 0px;
+    background-color: #E74242;
+    border-radius: 20px;
+    align-items: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #E0E0E0;  
+}
+
+
+
+.label{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #E0E0E0;
+}
+
+.cell{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #BCBCBC;
+}
+
+
+
+
+
+

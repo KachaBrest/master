@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kochergin</title>
+  <link rel="stylesheet" href="style/Style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Underdog&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet"> 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="navigation">
+      <ul>
+        <li class="list active">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#Text_About_Mi">
+            <span class="icon">
+              <ion-icon name="accessibility-outline"></ion-icon>
+            </span>
+            <span class="text">About Me</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#My_works">
+            <span class="icon">
+              <ion-icon name="construct-outline"></ion-icon>
+            </span>
+            <span class="text">My works</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#Photo">
+            <span class="icon">
+              <ion-icon name="images-outline"></ion-icon>
+            </span>
+            <span class="text">Photo</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
+      </ul>
+    </div>
+
+    <script>
+      const list = document.querySelectorAll(".list");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("active"));
+        this.classList.add("active");
+      }
+      list.forEach((item) => item.addEventListener("click", activeLink));
+    </script>
+  </header>
+  <section class="Home_page">
+    <section class="window">
+      <div class="bg">
+        <img class="foto" src="image/My.gif" alt="" />
+      </div>
+      <div class="paper">
+        <img class="foto_paper" src="image/Paper.png" alt="" />
+      </div>
+    </section>
+    <section class="Home_resume">
+      <h2 class="Resume">
+        <div><span>Junior Frontend Developer</span></div>
+        <div><span>Resume</span></div>
+      </h2>
+      
+    </section>
+    
+  </section>
+  <section id="Text_About_Mi" class="Text_About_Mi">
+      <h3>Немного расскажу о себе.</h3>
+      <p>Зовут меня - Кочергин Александр. Мне 31 год. Женат, есть двое детей. </p>
+      <p>Окончил СШ №20 в 2008 году, получил высшее образование в БрГТУ в 2013 году: 
+      диплом «Инженер-строитель», факультет «Водоснабжение, водоотведение и охрана 
+      водных ресурсов». По специальности не работал... </p>
+      <p>Трудовой стаж с 2011 года. Практически весь трудовой стаж был связан с продажами. 
+      6 лет продавал и настраивал компьютерную технику. </p>
+      <p>Первое знакомство с программирование было когда продавал дом айтишнику.  
+      Пообщавшись с ним, задался вопросом: «А почему он смог, а я нет? Разве я хуже?» </p> 
+      <p>Начал изучать C# вкупе с Unity. Это было первое знакомство… Как говориться было 
+      «очень интересно, но ничего не понятно». Потом знакомый предложил пойти на курсы 
+      Frontend разработчика в «компьютерную академию Шаг»… и тут я понял, что я попал. 
+      Я понял, что мне это нравиться и я хочу дальше развиваться в этой отрасли. </p>
+      <p>Этот сайт – это результат обучения всего лишь двух месяцев. За это время у меня в 
+      портфолио уже есть 4 сайта (один который я делал сообща с группой, три полностью самостоятельно) 
+      написанные только на HTML/CSS, а дальше, как известно, больше! </p>
+      <p>Ниже можно ознакомиться с чем я уже умею работать и просмотреть мое портфолио.</p>
+    </section>
+
+  <section class="About">
+    <div class="About_fon">
+      <div class="bg1">
+        <img class="BG_1" src="image/bg2.jpg" alt="">
+      </div>
+      <div class="bg2">
+        <img class="BG_2" src="image/Paper1.png" alt="">
+      </div>
+      <div class="skills">
+        <ul class="web">
+          <li><img src="Image/HTML.png" alt=""></li>
+          <li><img src="Image/CSS1.png" alt=""></li>
+          <li><img src="Image/JS.png" alt=""></li>
+        </ul>
+        <ul class="Photo">
+          <li><img src="image/PS.png" alt=""></li>
+          <li><img src="image/Ae1.png" alt=""></li>
+        </ul>
+        <ul class="communiti">
+          <li><img src="image/Git.png" alt=""></li>
+          <li><img src="image/Figma.png" alt=""></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="My_works">
+    <div class="container">
+      <div class="card">
+        <div class="imgBx">
+          <img src="Image/img1.jpg" alt="" />
+        </div>
+        <div class="content">
+          <h2>My first web-site</h2>
+          <p>
+            "This is my first website. I made this website while studying at the IT Step Academy.
+             On this site we study HTML and CSS. We made this web page for the whole class".
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="Image/img2.jpg" alt="" />
+        </div>
+        <div class="content">
+          <h2>This is my second web-site</h2>
+          <p>
+            This is the second site, I made it myself. I did it according to my teacher's template.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="Image/img3.jpg" alt="" />
+        </div>
+        <div class="content">
+          <h2>Pockemon</h2>
+          <p>
+            This is my third site. This is my coursework on HTML/CSS. I found the template on Figme. 
+            We did not study some topics at the academy, we had to find instructions on the Internet. 
+            But I did it... I think so =))
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social_icon">
+      <li>
+        <a href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </li>
+    </ul>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#Text_About_Mi">About Me</a></li>
+      <li><a href="#My_works">My works</a></li>
+      <li><a href="#Photo">Photo</a></li>
+    </ul>
+    <p>Developed by Kochergin Aleksandr</p>
+  </footer>
+</body>
+
+</html>
