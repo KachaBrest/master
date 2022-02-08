@@ -279,7 +279,7 @@
 // Вычислить среднее арифметическое значение тех элементов массива, которые попадают в интервал от –2 до 10
 // * Определите есть ли в массиве одинаковые элементы
 
-let arr = [5, 5, -58, -50, 68, -41, -22, -7, -64, 88, -51, 13, -13, -11, -50, -80, -13, 100, -70, -40, -98, 3, 20, -30, -30, -9, 46, 39, 89, 86, 38, 77, 64, -69, -37, 60, 73, 70, -33, 54, -29, 14, 15, 88, 65, -11, -10, 44, 15, 71, -88, 57, -26, 66, -87, 46, 46, 13, 65, -67, 56, 99, -97, -31, -98, -3, -74, 70, 45, -50, 78, 57, 100, 77, -85, -24, -89, -38, 26, -45, 55, -53, -43, -7, 90, -53, 17, -47, -93, 66, 33, 66, 78, 55, 34, -9, 63, -74, 87, 37];
+// let arr = [5, 5, -58, -50, 68, -41, -22, -7, -64, 88, -51, 13, -13, -11, -50, -80, -13, 100, -70, -40, -98, 3, 20, -30, -30, -9, 46, 39, 89, 86, 38, 77, 64, -69, -37, 60, 73, 70, -33, 54, -29, 14, 15, 88, 65, -11, -10, 44, 15, 71, -88, 57, -26, 66, -87, 46, 46, 13, 65, -67, 56, 99, -97, -31, -98, -3, -74, 70, 45, -50, 78, 57, 100, 77, -85, -24, -89, -38, 26, -45, 55, -53, -43, -7, 90, -53, 17, -47, -93, 66, 33, 66, 78, 55, 34, -9, 63, -74, 87, 37];
 // let k = arr.find( c => c <= 0 && c%2 == 0); //первый четный отрицательный элемент
 // console.log(k);
 // let arr1 = arr.filter( c => c%2 == 0); //новый массив с четными элементами
@@ -418,65 +418,155 @@ let arr = [5, 5, -58, -50, 68, -41, -22, -7, -64, 88, -51, 13, -13, -11, -50, -8
 //    сортировка рыбок по имени
 //    сортировка рыбок по размеру
 
-function Fish (name, color, size, speed, predator) {
-    this.name = name;
-    this.color = color;
-    this.size = size;
-    this.speed = speed;
-    this.predator = predator;
-    this.print = function() {
-        console.log(`Fish name - ${name}, color - ${color}, size - ${size}, speed - ${speed}km/h, predator - ${predator}`);
-    };
-};
+// function Fish (name, color, size, speed, predator) {
+//     this.name = name;
+//     this.color = color;
+//     this.size = size;
+//     this.speed = speed;
+//     this.predator = predator;
+//     this.print = function() {
+//         console.log(`Fish name - ${name}, color - ${color}, size - ${size}, speed - ${speed}km/h, predator - ${predator}`);
+//     };
+// };
 
-function Aquarium(fishs = []){
-    this.fishs = fishs;
-    this.add = function(fish){
-        this.fishs.push(fish);
-    };
-    this.show = function (){
-        this.fishs.forEach(b=> b.print())
-        console.log('--------');
-    };
-    this.sheDied = function(name) {
-        this.fishs = this.fishs.filter( n => n.name == name)
-        console.log('sheDied')
-    };
-    this.liveFish = function(name) {  // ????????????????
-        this.fishs = this.fishs.splice(this.fishs.indexOf(sheDied(name)),1);
+// function Aquarium(fishs = []){
+//     this.fishs = fishs;
+//     this.add = function(fish){
+//         this.fishs.push(fish);
+//     };
+//     this.show = function (){
+//         this.fishs.forEach(b=> b.print())
+//         console.log('--------');
+//     };
+//     this.sheDied = function(name) {
+//         this.fishs = this.fishs.filter( n => n.name == name)
+//         console.log('sheDied')
+//     };
+//     this.liveFish = function(name) {  // ????????????????
+//         this.fishs = this.fishs.splice(this.fishs.indexOf(sheDied(name)),1);
+//     }
+//     this.speedLimit = function (limit){
+//         this.fishs = this.fishs.filter( i => i.speed > +limit);
+//     };
+//     this.onlyPredator = function (){
+//         this.fishs = this.fishs.filter( i => i.predator == 'yes');
+//     };
+//     this.nameFish = function() {
+//         this.fishs.sort((n1, n2) => {if (n1.name > n2.name) {
+//             return 1;
+//         } else if (n1.name < n2.name) {
+//             return -1;
+//         } return 0;})
+//     };
+//     this.fishSize = function (){
+//         this.fishs.sort( (s1, s2) => {if (s1.size > s2.size) {
+//             return 1;
+//         } else if (s1.size < s2.size) {
+//             return -1;
+//         } return 0;});
+//     }
+// };
+
+// let fish1 = new Fish('Perch', 'gray', 'midle',12, 'yes');
+// let fish2 = new Fish('Amphiprion', 'orange', 'small',13, 'no');
+// let fish3 = new Fish('Guppy', 'multi-color', 'small',9, 'no');
+// let fish4 = new Fish('Shark', 'dark gray', 'big',25, 'yes');
+// let fish5 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
+// let fish6 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
+// let fish7 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
+
+// const fishs = [fish1, fish2, fish3, fish4, fish5];
+// const aquarium = new Aquarium(fishs);
+
+// aquarium.liveFish('Shark');
+// aquarium.show();
+
+// ==============================05.02.2022==========================
+// Получите по адресу https://jsonplaceholder.typicode.com/users массив объектов
+// Преобразуйте их в массив объектов вида 
+// Полученный массив преобразуйте заменив phone на сумму ТОЛЬКО четных цифр из этого же свойства
+// Отсортируйте массив по name
+// Удалите из массив всех в номере дома которых есть цифра 1
+// Разделите индекс всех на 2 и округлите результат до целого вверх
+// Выведите результат
+
+// const request = new XMLHttpRequest(); // создаем объект для получения JSON запроса
+ 
+// request.open('GET', 'https://jsonplaceholder.typicode.com/users'); // применяем метод .open('команда HTTP запроса', 'адресс откуда получаем')
+ 
+// request.onload = function() {   // функция .onload!!!! для обработки запроса
+// const result = request.response; // переменная которая получает строчный JSON .response (ее в дальнейшем нужно парсить)
+ 
+// const object = JSON.parse(result); // преобразуем JSON строку в объект !!!(JSON.parse(наша переменная со строкой))!!! и записываем в переменную.
+ 
+// console.log(object);
+
+// const arr = object.map( i => {
+//     return {
+//         id: i.id,
+//         name: i.name.slice(0,i.name.indexOf(' ')).toLocaleUpperCase(),
+//         phone: i.phone.replace(/\D/g,''),
+//         location: {street: i.address.street,
+//                     index: i.address.zipcode,
+//                     number: i.address.suite.replace(/\D/g,''),
+//         },
+//     }
+// });
+
+// const arr1 = arr.filter( i => i.location.number.indexOf('1') < 0);
+// arr1.sort( (n1,n2) => {
+//     if (n1.name > n2.name) {
+//         return 1;
+//     } else if (n1.name < n2.name) {
+//         return -1
+//     } return 0
+// });
+// arr1.map( i => {return i.location.index = Math.round(i.location.index/2)}); // ??????????????
+// console.log(arr);
+// console.log(arr1);
+
+// }
+// request.send(); // объявляем функция, для выполнения HTTP запроса и получения JSON
+// console.log('Done');
+
+// ------Задача------
+// Получите по адресу https://jsonplaceholder.typicode.com/posts массив объектов
+// Удалите из массив все элементы title который больше 25 символов
+// Каждуй первую букву слова из свойства body сделайте заглавной
+// Отсортируйте массив по длине body
+// Удалите из всех элементов свойство userId
+// Выведите результат
+// Преобразуйте результат в JSON строку и вывидите
+
+const request = new XMLHttpRequest(); // создаем объект для получения JSON запроса
+ 
+request.open('GET', 'https://jsonplaceholder.typicode.com/posts'); // применяем метод .open('команда HTTP запроса', 'адресс откуда получаем')
+ 
+request.onload = function() {   // функция .onload!!!! для обработки запроса
+const result = request.response; // переменная которая получает строчный JSON .response (ее в дальнейшем нужно парсить)
+ 
+const object = JSON.parse(result); // преобразуем JSON строку в объект !!!(JSON.parse(наша переменная со строкой))!!! и записываем в переменную.
+ 
+console.log(object);
+
+const arr = object.map( i => {
+    return {
+        id: i.id,
+        title: i.title,
+        body: i.body.replace(/( |^)[а-яёa-z]/g, function(x){ return x.toUpperCase();}), //каждое слово с большой буквы
     }
-    this.speedLimit = function (limit){
-        this.fishs = this.fishs.filter( i => i.speed > +limit);
-    };
-    this.onlyPredator = function (){
-        this.fishs = this.fishs.filter( i => i.predator == 'yes');
-    };
-    this.nameFish = function() {
-        this.fishs.sort((n1, n2) => {if (n1.name > n2.name) {
-            return 1;
-        } else if (n1.name < n2.name) {
-            return -1;
-        } return 0;})
-    };
-    this.fishSize = function (){
-        this.fishs.sort( (s1, s2) => {if (s1.size > s2.size) {
-            return 1;
-        } else if (s1.size < s2.size) {
-            return -1;
-        } return 0;});
-    }
-};
+});
 
-let fish1 = new Fish('Perch', 'gray', 'midle',12, 'yes');
-let fish2 = new Fish('Amphiprion', 'orange', 'small',13, 'no');
-let fish3 = new Fish('Guppy', 'multi-color', 'small',9, 'no');
-let fish4 = new Fish('Shark', 'dark gray', 'big',25, 'yes');
-let fish5 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
-let fish6 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
-let fish7 = new Fish('Piranhas', 'gray-blue', 'small',19, 'yes');
-
-const fishs = [fish1, fish2, fish3, fish4, fish5];
-const aquarium = new Aquarium(fishs);
-
-aquarium.liveFish('Shark');
-aquarium.show();
+const arr1 = arr.filter( i => i.title.length > 26);
+arr1.sort( (l1, l2) => {
+    if (l1.body.length > l2.body.length) {
+        return 1;
+    } else if (l1.body.length < l2.body.length) {
+        return -1;
+    } return 0;
+}); 
+console.log(JSON.stringify(arr1));
+// console.log(arr1);
+}
+request.send(); // объявляем функция, для выполнения HTTP запроса и получения JSON
+console.log('Done');
