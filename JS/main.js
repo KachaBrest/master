@@ -538,35 +538,87 @@
 // Выведите результат
 // Преобразуйте результат в JSON строку и вывидите
 
-const request = new XMLHttpRequest(); // создаем объект для получения JSON запроса
+// const request = new XMLHttpRequest(); // создаем объект для получения JSON запроса
  
-request.open('GET', 'https://jsonplaceholder.typicode.com/posts'); // применяем метод .open('команда HTTP запроса', 'адресс откуда получаем')
+// request.open('GET', 'https://jsonplaceholder.typicode.com/posts'); // применяем метод .open('команда HTTP запроса', 'адресс откуда получаем')
  
-request.onload = function() {   // функция .onload!!!! для обработки запроса
-const result = request.response; // переменная которая получает строчный JSON .response (ее в дальнейшем нужно парсить)
+// request.onload = function() {   // функция .onload!!!! для обработки запроса
+// const result = request.response; // переменная которая получает строчный JSON .response (ее в дальнейшем нужно парсить)
  
-const object = JSON.parse(result); // преобразуем JSON строку в объект !!!(JSON.parse(наша переменная со строкой))!!! и записываем в переменную.
+// const object = JSON.parse(result); // преобразуем JSON строку в объект !!!(JSON.parse(наша переменная со строкой))!!! и записываем в переменную.
  
-console.log(object);
+// console.log(object);
 
-const arr = object.map( i => {
-    return {
-        id: i.id,
-        title: i.title,
-        body: i.body.replace(/( |^)[а-яёa-z]/g, function(x){ return x.toUpperCase();}), //каждое слово с большой буквы
-    }
-});
+// const arr = object.map( i => {
+//     return {
+//         id: i.id,
+//         title: i.title,
+//         body: i.body.replace(/( |^)[а-яёa-z]/g, function(x){ return x.toUpperCase();}), //каждое слово с большой буквы
+//     }
+// });
 
-const arr1 = arr.filter( i => i.title.length > 26);
-arr1.sort( (l1, l2) => {
-    if (l1.body.length > l2.body.length) {
-        return 1;
-    } else if (l1.body.length < l2.body.length) {
-        return -1;
-    } return 0;
-}); 
-console.log(JSON.stringify(arr1));
-// console.log(arr1);
-}
-request.send(); // объявляем функция, для выполнения HTTP запроса и получения JSON
-console.log('Done');
+// const arr1 = arr.filter( i => i.title.length > 26);
+// arr1.sort( (l1, l2) => {
+//     if (l1.body.length > l2.body.length) {
+//         return 1;
+//     } else if (l1.body.length < l2.body.length) {
+//         return -1;
+//     } return 0;
+// }); 
+// console.log(JSON.stringify(arr1));
+// // console.log(arr1);
+// }
+// request.send(); // объявляем функция, для выполнения HTTP запроса и получения JSON
+// console.log('Done');
+
+// =======================09.02.2022============================
+// ! Отсортируйте все альбомы по заголовку
+// ! Найдите количество картинок ширина и высота которых больше 800px
+// Преобразуйте альбом
+    // !Добавьте свойство user куда поместите объект соответствующего автора (id автора == id пользователя)
+    // Замените в массиве images (внутри альбома) цифры на картинки (объекты image) с соответсвующим id
+// ! Удалите альбомы в которых меньше 5 картинок
+
+
+// 1. Создаём новый XMLHttpRequest-объект
+let xhr = new XMLHttpRequest();
+
+// 2. Настраиваем его
+xhr.open('GET', 'https://msheiko.github.io/js/dz/F1021/json/1.json'); 
+
+// 3. Отсылаем запрос
+xhr.send();
+
+// 4. Этот код сработает после того, как мы получим ответ сервера
+xhr.onload = function() {
+    console.log('Onload');
+    const result = xhr.response; //  Получаем ответ, это JSON строка
+    const object = JSON.parse(result); // Преобразуем строку в JS объект
+    // Пишем код домашки ТУТ!!!
+    object.albums.sort( (n1, n2) => {
+        if (n1.title > n2.title) {
+            return 1;
+        } else if (n1.title < n2.title ) {
+            return -1;
+        } return 0;
+    });
+    let n = object.images.filter(i => i.height.replace(/\D/g,'') < 800).filter(i => i.width.replace(/\D/g,'') < 800).length;
+    console.log('картинок с шириной и высотой меньше 800 px - ' + n +'шт');
+    object.albums.forEach( i => {i.user = object.users.filter( n => (n.id === i.authorId))});
+    object.albums.forEach( (i, index) => {
+        let ind = i.images;
+        
+        ind.forEach( massive => massive.forEach((index, num) => {
+            return index = object.images[massive].image}));
+        console.log(ind);
+    });
+    let filt = object.albums.filter( i => i.images.length > 4);
+    console.log(object);
+    console.log(filt);  // Выводим результат по необходимости
+
+};
+
+// Этот код сработает если мы не получим ответ от сервера
+xhr.onerror = function() {
+  console.error("Запрос не удался");
+};
