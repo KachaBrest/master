@@ -602,20 +602,40 @@ xhr.onload = function() {
             return -1;
         } return 0;
     });
-    let n = object.images.filter(i => i.height.replace(/\D/g,'') < 800).filter(i => i.width.replace(/\D/g,'') < 800).length;
+    let n = object.images.filter(i => i.height.replace(/\D/g,'') > 800).filter(i => i.width.replace(/\D/g,'') > 800).length;
     console.log('картинок с шириной и высотой меньше 800 px - ' + n +'шт');
     object.albums.forEach( i => {i.user = object.users.filter( n => (n.id === i.authorId))});
-    object.albums.forEach( (i, index) => {
-        let ind = i.images;
-        
-        ind.forEach( massive => massive.forEach((index, num) => {
-            return index = object.images[massive].image}));
-        console.log(ind);
+    
+    object.albums.forEach( alb => { // заменить в массиве цифры на картинки с соответствующим id
+        const imgs = alb.images.map( imgId => object.images.find(img => img.imageID === imgId))
     });
     let filt = object.albums.filter( i => i.images.length > 4);
     console.log(object);
     console.log(filt);  // Выводим результат по необходимости
 
+    let numberWH = object.images.map( imgs => {
+        return {
+            image: imgs.image.split('/').pop(),
+            width: Number.parseInt(imgs.width),
+            height: Number.parseInt(imgs.height)}}
+        )
+    console.log(numberWH);
+
+     let unicName = numberWH.sort((img1, img2) => { 
+        if (img1.image > img2.image) {
+        return 1;} else if (img1.image < img2.image) {
+        return -1;}
+        else { 
+        return 0}
+         })
+    const nameUnic = [];
+    console.log(unicName.image);
+    // for ( let i=0; i<unicName.image.length; i++) {              !!!!!!!!!!!!!!!! ДОМА ДОРАБОТАТЬ!!!!!!!!!!!!!!!!!!!
+    //     if (unicName.image[i] !== unicName.image[i+1]) {
+    //         nameUnic.push(unicName.image[i]);
+    //     }
+    // }
+    // console.log(nameUnic);
 };
 
 // Этот код сработает если мы не получим ответ от сервера
