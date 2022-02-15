@@ -63,13 +63,13 @@
 
 // =====================10.02.2022 (Даты)=============================
 
-const myYear = new Date (1990,09,25);
-const thisDay = new Date ();
-console.log(thisDay);
-const howSeck = +thisDay - +myYear;
-const howMyAge = new Date((howSeck/1000 + 1_000_000_000)*1000);
-console.log(howMyAge);
-console.log(myYear)
-let yaers = howMyAge.getFullYear() - myYear.getFullYear();
-console.log('От моего дня рождения, до сегодняжнего дня прошло ' + howSeck/1000);
-console.log('через 1 млрд секунд мне будет ' + yaers);
+// const myYear = new Date (1990,09,25);
+// const thisDay = new Date ();
+// console.log(thisDay);
+// const howSeck = +thisDay - +myYear;
+// const howMyAge = new Date((howSeck/1000 + 1_000_000_000)*1000);
+// console.log(howMyAge);
+// console.log(myYear)
+// let yaers = howMyAge.getFullYear() - myYear.getFullYear();
+// console.log('От моего дня рождения, до сегодняжнего дня прошло ' + howSeck/1000);
+// console.log('через 1 млрд секунд мне будет ' + yaers);

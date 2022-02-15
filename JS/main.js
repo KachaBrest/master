@@ -580,65 +580,242 @@
 // ! Удалите альбомы в которых меньше 5 картинок
 
 
-// 1. Создаём новый XMLHttpRequest-объект
-let xhr = new XMLHttpRequest();
+// // 1. Создаём новый XMLHttpRequest-объект
+// let xhr = new XMLHttpRequest();
 
-// 2. Настраиваем его
-xhr.open('GET', 'https://msheiko.github.io/js/dz/F1021/json/1.json'); 
+// // 2. Настраиваем его
+// xhr.open('GET', 'https://msheiko.github.io/js/dz/F1021/json/1.json'); 
 
-// 3. Отсылаем запрос
-xhr.send();
+// // 3. Отсылаем запрос
+// xhr.send();
 
-// 4. Этот код сработает после того, как мы получим ответ сервера
-xhr.onload = function() {
-    console.log('Onload');
-    const result = xhr.response; //  Получаем ответ, это JSON строка
-    const object = JSON.parse(result); // Преобразуем строку в JS объект
-    // Пишем код домашки ТУТ!!!
-    object.albums.sort( (n1, n2) => {
-        if (n1.title > n2.title) {
-            return 1;
-        } else if (n1.title < n2.title ) {
-            return -1;
-        } return 0;
-    });
-    let n = object.images.filter(i => i.height.replace(/\D/g,'') > 800).filter(i => i.width.replace(/\D/g,'') > 800).length;
-    console.log('картинок с шириной и высотой меньше 800 px - ' + n +'шт');
-    object.albums.forEach( i => {i.user = object.users.filter( n => (n.id === i.authorId))});
+// // 4. Этот код сработает после того, как мы получим ответ сервера
+// xhr.onload = function() {
+//     console.log('Onload');
+//     const result = xhr.response; //  Получаем ответ, это JSON строка
+//     const object = JSON.parse(result); // Преобразуем строку в JS объект
+//     // Пишем код домашки ТУТ!!!
+//     object.albums.sort( (n1, n2) => {
+//         if (n1.title > n2.title) {
+//             return 1;
+//         } else if (n1.title < n2.title ) {
+//             return -1;
+//         } return 0;
+//     });
+//     let n = object.images.filter(i => i.height.replace(/\D/g,'') > 800).filter(i => i.width.replace(/\D/g,'') > 800).length;
+//     console.log('картинок с шириной и высотой меньше 800 px - ' + n +'шт');
+//     object.albums.forEach( i => {i.user = object.users.filter( n => (n.id === i.authorId))});
     
-    object.albums.forEach( alb => { // заменить в массиве цифры на картинки с соответствующим id
-        const imgs = alb.images.map( imgId => object.images.find(img => img.imageID === imgId))
-    });
-    let filt = object.albums.filter( i => i.images.length > 4);
-    console.log(object);
-    console.log(filt);  // Выводим результат по необходимости
+//     object.albums.forEach( alb => { // заменить в массиве цифры на картинки с соответствующим id
+//         const imgs = alb.images.map( imgId => object.images.find(img => img.imageID === imgId))
+//     });
+//     let filt = object.albums.filter( i => i.images.length > 4);
+//     console.log(object);
+//     console.log(filt);  // Выводим результат по необходимости
 
-    let numberWH = object.images.map( imgs => {
-        return {
-            image: imgs.image.split('/').pop(),
-            width: Number.parseInt(imgs.width),
-            height: Number.parseInt(imgs.height)}}
-        )
-    console.log(numberWH);
+//     let numberWH = object.images.map( imgs => {
+//         return {
+//             image: imgs.image.split('/').pop(),
+//             width: Number.parseInt(imgs.width),
+//             height: Number.parseInt(imgs.height)}}
+//         )
+//     console.log(numberWH);
 
-     let unicName = numberWH.sort((img1, img2) => { 
-        if (img1.image > img2.image) {
-        return 1;} else if (img1.image < img2.image) {
-        return -1;}
-        else { 
-        return 0}
-         })
-    const nameUnic = [];
-    console.log(unicName.image);
-    // for ( let i=0; i<unicName.image.length; i++) {              !!!!!!!!!!!!!!!! ДОМА ДОРАБОТАТЬ!!!!!!!!!!!!!!!!!!!
-    //     if (unicName.image[i] !== unicName.image[i+1]) {
-    //         nameUnic.push(unicName.image[i]);
-    //     }
-    // }
-    // console.log(nameUnic);
-};
+//      let unicName = numberWH.sort((img1, img2) => { 
+//         if (img1.image > img2.image) {
+//         return 1;} else if (img1.image < img2.image) {
+//         return -1;}
+//         else { 
+//         return 0}
+//          })
+//     const nameUnic = [];
+//     console.log(unicName[unicName.length-1].image);
+//     for ( let i=0; i<unicName.length - 1; i++) {    
+//         let nextI = i+1;          //!!!!!!!!!!!!!!!! ДОМА ДОРАБОТАТЬ!!!!!!!!!!!!!!!!!!!
+//         if (unicName[i].image !== unicName[nextI].image) {
+//             nameUnic.push(unicName[i].image);
+//         }
+//     }
+//     if (unicName[unicName.length-1].image == unicName[unicName.length-2].image) {
+//         nameUnic.push(unicName.length).imag
+//     }
+//     console.log(nameUnic);
+// };
 
-// Этот код сработает если мы не получим ответ от сервера
-xhr.onerror = function() {
-  console.error("Запрос не удался");
-};
+// // Этот код сработает если мы не получим ответ от сервера
+// xhr.onerror = function() {
+//   console.error("Запрос не удался");
+// };
+
+// ================================13.02.2020=============================================
+// Задача 1
+// Получите текущую дату и время
+    // Выведите текущий день.
+    // Выведите текущий месяц.
+    // Выведите текущий год.
+    // Выведите номер текущего дня недели
+// let thisDay = new Date();
+// console.log(thisDay);
+// console.log(thisDay.getDate());
+// function HowMonth (thisDay) {
+//     if (thisDay.getMonth() == 0) {
+//         console.log('Январь')
+//     } else if (thisDay.getMonth() == 1) {
+//         console.log('Февраль')
+//     } else if (thisDay.getMonth() == 2) {
+//         console.log('Март')
+//     }  else if (thisDay.getMonth() == 3) {
+//         console.log('Апрель')
+//     }  else if (thisDay.getMonth() == 4) {
+//         console.log('Май')
+//     }  else if (thisDay.getMonth() == 5) {
+//         console.log('Июнь')
+//     }  else if (thisDay.getMonth() == 6) {
+//         console.log('Июль')
+//     }  else if (thisDay.getMonth() == 7) {
+//         console.log('Август')
+//     }  else if (thisDay.getMonth() == 8) {
+//         console.log('Сентябрь')
+//     }  else if (thisDay.getMonth() == 9) {
+//         console.log('Октябрь')
+//     }  else if (thisDay.getMonth() == 10) {
+//         console.log('Ноябрь')
+//     }  else {
+//         console.log('Декабрь')
+// }}; 
+
+// function HowDay (thisDay) {
+//     let nd = thisDay.getDay();
+//     if (thisDay.getDay()%7 == 0) {
+//     console.log ('воскресенье')
+//     } else if (nd == 1 || nd == 8 || nd == 15 || nd == 22 || nd == 29) {
+//     console.log('понедельник')
+//     } else if (nd == 2 || nd == 9 || nd == 16 || nd == 23 || nd == 30) {
+//     console.log('вторник')
+//     } else if (nd == 3 || nd == 10 || nd == 17 || nd == 24 || nd == 31) {
+//     console.log('среда')
+//     } else if (nd == 4 || nd == 11 || nd == 18 || nd == 25) {
+//     console.log('четверг')
+//     } else if (nd == 5 || nd == 12 || nd == 19 || nd == 26) {
+//     console.log('пятница')
+//     } else {
+//     console.log('суббота')
+// }};
+// console.log(thisMonth);
+// console.log(thisDay.getFullYear());
+// console.log(thisDayName);
+
+// Задача 2
+// Узнайте, каким днем недели былл 10-го марта 2005 года
+// let thisDay = new Date(2005, 2, 10);
+// HowDay(thisDay);
+
+// Задача 3
+// Выведите количество дней с 1-го января 1970 года до настоящего момента времени. Результат округлите
+// let date = new Date();
+// console.log('с 1 января 1970 года прошло ' + Math.round(date.getTime()/1000/60/60) + ' часов');
+
+// Задача 4
+// Выведите количество часов, прошедшее между 1 марта 1988 года и 8 марта 2015 года
+// let firstDate = new Date(2015, 2, 8);
+// let secondDate = new Date(1988, 2,1);
+// let nowHours = (firstDate.getTime() - secondDate.getTime())/1000/60/60 - 24*60;
+// console.log('с 1 марта 1988 года до 8 марта 2015 года прошло ' + nowHours + ' часов');
+
+// Задача 5
+// Выведите на экран количество секунд, которое осталось до конца дня.
+
+// let endDay = new Date(2022,01,14);
+// let howSecond = Math.round((endDay.getTime() - date.getTime())/1000);
+// console.log('до конца дня осталось ' + howSecond + ' секунд');
+
+// Задача 6
+// Преобразуйте массив таким образом, что бы в нем все элементы были уникальными (встречаются лишь один раз)
+
+// const arr = [1, 2, 3, 1, 2, 5, 6, 3];
+// const newArr = Array.from(new Set(arr));
+// const newArrOther = arr.sort((n1, n2) => n1-n2).filter( (i, num) => arr[num] != arr[num+1]);
+// console.log(newArr);
+// console.log(newArrOther);
+
+// Задача 7
+// Удалить в массиве все числа, которые повторяются более двух раз.
+
+// const arr = [1, 1, 1, 2, 2, 3, 4, 5, 5, 5, 6, 6, 7, 8 ];
+// const newArr = arr.sort((n1, n2) => n1-n2).filter( (i, num) => arr[num] != arr[num+2]);
+// console.log(arr);
+// console.log(newArr);
+
+// Задача 8
+// Удалить из второго массива только те элементы, которые встречаеются в первом массиве
+
+// const arr1 = [1, 3, 5];
+// const arr2 = [1, 2, 3, 1, 4, 5, 6];
+
+// const sortArr = arr2.filter(index => !~arr1.indexOf(index));
+// console.log(sortArr);  
+
+// Задача 9
+// Строка состоит из слов, разделенных одним или несколькими пробелами и знаками препинания.
+    // (Во всех подзадачах маленькие и больше буквы считать одинаковыми)
+    // !Найдите слово наибольшей длины.
+    // !Определить какая буква в строке встречается чаще всего
+    // !?Вывести в алфавитном порядке все слова, содержащие наибольшее количество гласных букв
+    // !Найти все слова, в которые буква «а» входит не менее двух раз
+    // !Вывести текст, составленный из первых букв всех слов содержащих букву «и».
+    // !Вывести слова, в которых нет повторяющихся букв
+// const str = 'Объектно-ориентированное   программирование (ООП) —   методология программирования, основанная на   представлении программы в виде совокупности    объектов, каждый из которых является   экземпляром определённого класса, а классы    образуют иерархию наследования'
+// const word = str.split(' ').filter(words => words.length>1);
+// const lengthWord = word.sort( (words1, words2) => words2.length - words1.length);
+// const maxLengthWord = lengthWord[0];
+// console.log(maxLengthWord);
+// // Найдите слово наибольшей длины
+
+// const letter = str.replaceAll(' ', '').replaceAll(',', '').replaceAll('-', '').toLowerCase().split('');
+// let result = letter.reduce(function(acc, el) {  acc[el] = (acc[el] || 0) + 1;  return acc;}, {});
+// console.log('чаще всего встречается буква ' + Object.entries(result).reduce((max, n) => n[1] > max[1] ? n : max).join(': ') + ' раз');
+// //Определить какая буква в строке встречается чаще всего
+
+// let abc = word.sort((n1, n2) => String(n2).match(/[ёуеыаоэяию]/gi).length - String(n1).match(/[ёуеыаоэяию]/gi).length);
+// console.log(abc);
+// //Вывести в алфавитном порядке все слова, содержащие наибольшее количество гласных букв
+
+// const haveA = lengthWord.filter( word => word.match(/[а]/gi)).filter( (word, index) => word.match(/[а]/gi).length >= 2 );
+// console.log(haveA);
+// // Найти все слова, в которые буква «а» входит не менее двух раз
+
+// const haveI = lengthWord.filter( word => word.match(/[и]/gi) ).map( wodrI => wodrI.split('')[0]).join('');
+// console.log(haveI);
+// // Вывести текст, составленный из первых букв всех слов содержащих букву «и».
+
+// const unikWord = lengthWord.map( i => i.toLowerCase().split('').sort());
+
+// function Check (arr, abs) {
+//     let ind = [];
+//     const unicNameWord = arr.slice();
+//     for (let i=0; i < unicNameWord.length; i++) {
+//         for (let n = 0; n < unicNameWord[i].length-1; n++) {
+//             if(unicNameWord[i][n] == unicNameWord[i][n+1]) {
+//                 unicNameWord[i] = 'delete';
+//             };
+//         };
+//     };
+//     unicNameWord.forEach((element, index) => {
+//         if (element !== 'delete') {
+//             ind.push(index);
+//         }
+//     });
+//     let serchWors = [];
+//     serchWors = abc.filter((element, index) => {
+//         { for (let i = 0; i < ind.length; i++) {
+//             if (
+//                 index == ind[i]
+//              ) { 
+//                  return true
+//                 } 
+//             }}}
+//     );
+//     console.log(serchWors);
+// };
+// Check(unikWord, abc);
+// //  Вывести слова, в которых нет повторяющихся букв
