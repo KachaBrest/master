@@ -73,3 +73,70 @@
 // let yaers = howMyAge.getFullYear() - myYear.getFullYear();
 // console.log('От моего дня рождения, до сегодняжнего дня прошло ' + howSeck/1000);
 // console.log('через 1 млрд секунд мне будет ' + yaers);
+
+// ===========================15.02.2022========================================
+
+// let user = {
+//     name: 'Ivan',
+//     age: 30,
+// };
+// user.admin = true;
+
+// let clone = {};
+// for( let key in user) {
+//     clone[key] = user[key];
+// }
+// user.cat = 'Pers';
+// clone.name = 'Petr';
+// clone.age = 27;
+// console.log(user);
+// console.log(clone);
+
+
+// let user = {
+//     name: 'John',
+// }
+
+// Object.defineProperty(user, 'age', {
+//     value: '30',
+//     writable: false,
+// });
+// console.log(user);
+// user.age = 25;
+// console.log(user);
+
+//================================================17.02.2022=========================
+
+// Guest > name,
+//User > age, city
+//AutUser > password, enmail
+// Admin > isAdmin
+
+const guest = {
+    name: 'Ivan',
+};
+console.log(guest);
+
+const user = {
+    name: '',
+    age: 25,
+    city: 'Brest',
+};
+Object.setPrototypeOf(user, guest);
+console.log(user);
+
+const autUser = {
+    name: 'Misha',
+    age: 33,
+    password: 12345,
+    email: 'kacha@gmail.com'
+};
+Object.setPrototypeOf(autUser, user);
+console.log(autUser);
+
+const admin = {
+    isAdmin: 'true',
+};
+Object.setPrototypeOf(admin, autUser);
+console.log(admin);
+

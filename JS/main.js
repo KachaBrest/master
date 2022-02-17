@@ -725,7 +725,7 @@
 // Задача 5
 // Выведите на экран количество секунд, которое осталось до конца дня.
 
-// let endDay = new Date(2022,01,14);
+// let endDay = new Date(2022,01,16);
 // let howSecond = Math.round((endDay.getTime() - date.getTime())/1000);
 // console.log('до конца дня осталось ' + howSecond + ' секунд');
 
@@ -793,6 +793,7 @@
 // function Check (arr, abs) {
 //     let ind = [];
 //     const unicNameWord = arr.slice();
+//
 //     for (let i=0; i < unicNameWord.length; i++) {
 //         for (let n = 0; n < unicNameWord[i].length-1; n++) {
 //             if(unicNameWord[i][n] == unicNameWord[i][n+1]) {
@@ -819,3 +820,4 @@
 // };
 // Check(unikWord, abc);
 // //  Вывести слова, в которых нет повторяющихся букв
+
