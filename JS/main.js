@@ -821,3 +821,171 @@
 // Check(unikWord, abc);
 // //  Вывести слова, в которых нет повторяющихся букв
 
+//======================20.02.2022=======================================
+//Задача 1
+//Дан двухмерный массив с числами, например [[1, 2, 3], [4, 5], [6]]. Найдите сумму элементов этого массива. 
+//Массив, конечно же, может быть произвольным.
+
+// const arr = [[1, 2, 3], [4, 5], [6]];
+// const arr1 = [].concat(arr[0],arr[1],arr[2]);
+// const summ = arr1.reduce((num,i) => num + i, 0);
+// console.log('сумма всех чисел в массиве равна = ' + summ);
+
+//Задача 2
+//    !Создайте объект User c полями firstName, lastName, year(год рождения)
+//    !Реализуйте геттер, который возвращает полное имя пользователя
+//    !Реализутей геттер age на основе года рождения пользователя
+//    !Создайте массив из 10 пользователей
+//    Добавьте возможность вывода пользователей старше определенного возраста n, 
+// упорядоченых в алфавитном порядке в обратном направлении
+//    Добавьте возможность удаления пользователей младше определенного возраста n
+
+// function User (firstName, lastName, year) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.year = year;
+// };
+// const perens = {
+//     get UserName () {
+//         return `${this.firstName} ${this.lastName}`;
+//     },
+//     get UserAges () {
+//         let date = new Date(this.year);
+//         let thisDay = new Date();
+//         let hisAge = thisDay.getFullYear(thisDay) - date.getFullYear(date);
+        
+//         return hisAge;
+//     }
+// };
+
+// User.prototype = perens;
+
+// const user1 = new User('Misha', 'Serov', '1991, 2, 22');
+// const user2 = new User('Masha', 'Komar', '1985, 5, 27');
+// const user3 = new User('Dima', 'Volc', '1970, 2, 8');
+// const user4 = new User('Ivan', 'Guc', '1999, 9, 25');
+// const user5 = new User('Kolia', 'Masetich', '1995, 3, 23');
+// const user6 = new User('Dasha', 'Semak', '1999, 10, 18');
+// const user7 = new User('Polina', 'Podzemelnaia', '1978, 7, 28');
+// const user8 = new User('Alice', 'Strosh', '1983, 11, 25');
+// const user9 = new User('Anna', 'Muha', '2002, 12, 1');
+// const user10 = new User('Marina', 'Pechko', '2000, 12, 31');
+// const users = [].concat(user1, user2, user3,user4, user5, user6,user7, user8, user9,user10);
+// console.log(users);
+
+// function OldUser (arr, ages){
+//     const oldUsers = arr.filter(user => user.UserAges > ages).
+//                         sort((user1, user2) => { 
+//                             if (user1.firstName > user2.firstName) {
+//                                 return -1;
+//                             } else if ( user1.firstName < user2.firstName) {
+//                                 return 1;
+//                             } else {
+//                                 return 0;
+//                             }});
+//     console.log(oldUsers);
+// };
+
+
+// function DeleteYungUser (arr, ages) {
+//     let notYung = arr.filter( user => user.UserAges > ages)
+//     console.log(notYung);
+// };
+
+// OldUser(users, 25);
+
+//Задача 3
+//Создайте объект shape и его наследников circle, rectangle.
+//    Oбъект shape содержит метод draw()(выводит название фигуры и ее цвет) и переменную хранящую цвет.
+//    Oбъект rectangle содержит свойство хранящее длины двух его сторон
+//    Oбъект circle содержит свойство radius
+//    Oбъекты circle, rectangle содержат координаты точек.
+//    Создать массив содержащий эти фигуры.
+//В цикле нарисовать их (вызвать метод draw).
+
+const shape = {
+    color: 'green',
+    draw: function draw() {
+        let canvas = document.getElementById('canvas');
+        let ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        if (rectangle.leanghtA) {   // рисуем прямоугольник
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x,this.y,this.leanghtA,this.leanghtB);
+        } if (circle.radius) {   // рисуем круг ???
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x,this.y,this.radius,0,2 * Math.PI);
+            ctx.stroke();
+        };
+    },
+};
+
+let box = 17;
+
+const rectangle = {
+    leanghtA: 150,
+    leanghtB: 400,
+    x: 10*box,
+    y: 3*box,
+};
+
+const circle = {
+    radius: 50,
+    x: 3*box,
+    y: 3*box,
+};
+Object.setPrototypeOf(rectangle, shape);
+Object.setPrototypeOf(circle, shape);
+
+rectangle.draw();
+//circle.draw();
+
+// Задача 4
+// !Реализуйте функции конструктор для Student и Aspirant, аспирант отличается от студента наличием некой научной работы.
+// !Student содержит свойства:
+//    firstName
+//    lastName
+//    group
+//    averageMark (содержащую среднюю оценку).
+// !Aspirant имеет дополнительное свойство work
+// !Создать метод getScholarship() для Student, который возвращает сумму стипендии. Если средняя оценка студента больше 
+//или равна 5, то сумма 100, иначе 80.
+// !Переопределить этот метод в Aspirant. Если средняя оценка аспиранта равна 5, то сумма 200, иначе 180.
+// !Создать несколько объектов типа Student и Aspirant. Создать массив содержащий объекты Student и Aspirant. 
+//Вызвать метод getScholarship() для каждого элемента массива.
+
+// function Students (firstName, lastName, group, averageMark) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.group = group;
+//     this.averageMark = averageMark;
+//     this.getScholarship = function GetScholarship () {
+//         if (this.averageMark >= 5) {
+//             return 100
+//         } else {
+//             return 80
+//         };
+//     }
+// };
+
+// function Aspirant (firstName, lastName, group, averageMark) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.group = group;
+//     this.averageMark = averageMark;
+//     this.work = work;
+//     this.getScholarship = function GetScholarship () {
+//         if (this.averageMark >= 5) {
+//             return 200
+//         } else {
+//             return 180
+//         };
+//     };
+// };
+
+// const student1 = new Students('Leks', 'Lutor', '7B', '5');
+// console.log(student1);
+
+// console.log(student1.getScholarship());
