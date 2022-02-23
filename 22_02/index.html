@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        margin: 20px;
+        padding: 20px;
+        border: 3px black solid;
+    }
+</style>
+<body>
+    <div>
+        <div></div>
+        <div>
+            <div></div>
+            <div id="target"></div>
+        </div>
+        <div></div>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <div class="target2">    
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3
+                <ul>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                </ul>
+            </li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+<script>
+
+//    const list = Array.from(document.body.querySelectorAll('li'));
+//    list.forEach(li => {
+//        if (Number.parseInt(li.textContent)%2 != 0) {
+//            li.remove();
+//        };
+//    });
+
+//    const target = document.body.querySelector("#target");
+//    target.style.background = 'yellow';
+//   target.previousElementSibling.style.background = 'red';
+//   target.parentElement.style.backgroundColor = 'blue';
+//   target.parentElement.previousElementSibling.style.backgroundColor = 'green';
+//   target.parentElement.nextElementSibling.style.backgroundColor = 'green';
+//    target.parentElement.parentElement.style.backgroundColor = 'pink';
+
+//    const li = Array.from(document.body.querySelectorAll(".target2 > ul > li > ul > li"));
+//    li.forEach( li => li.style.color = "red");
+let s = 10;
+const li = Array.from(document.body.querySelectorAll('li'));
+li.forEach( li => {
+    li.style.fontSize = s + 'px';
+    s = s + 10;
+})
+
+
+
+
+
+</script>
+</body>
+</html>

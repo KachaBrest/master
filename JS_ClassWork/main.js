@@ -112,31 +112,31 @@
 //AutUser > password, enmail
 // Admin > isAdmin
 
-const guest = {
-    name: 'Ivan',
-};
-console.log(guest);
+// const guest = {
+//     name: 'Ivan',
+// };
+// console.log(guest);
 
-const user = {
-    name: '',
-    age: 25,
-    city: 'Brest',
-};
-Object.setPrototypeOf(user, guest);
-console.log(user);
+// const user = {
+//     name: '',
+//     age: 25,
+//     city: 'Brest',
+// };
+// Object.setPrototypeOf(user, guest);
+// console.log(user);
 
-const autUser = {
-    name: 'Misha',
-    age: 33,
-    password: 12345,
-    email: 'kacha@gmail.com'
-};
-Object.setPrototypeOf(autUser, user);
-console.log(autUser);
+// const autUser = {
+//     name: 'Misha',
+//     age: 33,
+//     password: 12345,
+//     email: 'kacha@gmail.com'
+// };
+// Object.setPrototypeOf(autUser, user);
+// console.log(autUser);
 
-const admin = {
-    isAdmin: 'true',
-};
-Object.setPrototypeOf(admin, autUser);
-console.log(admin);
+// const admin = {
+//     isAdmin: 'true',
+// };
+// Object.setPrototypeOf(admin, autUser);
+// console.log(admin);
 

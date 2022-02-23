@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px;
+            padding: 10px;
+            border: 2px black dashed;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div></div>
+    <div>
+        <div>
+            <div></div>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <div></div>
+    <div>
+        <div></div>
+        <div>
+            <div></div>
+        </div>
+        <div></div>
+        <div></div>
+    </div>
+    <div></div>
+</div>
+<script>
+    const div = Array.from(document.body.querySelectorAll('div'));
+    div.forEach( div => { 
+        if (!div.hasChildNodes()) {
+            div.style.backgroundColor = 'blue'
+        } else if (div.children.length == 2) {
+            console.log(div.children.length)
+            div.style.backgroundColor = 'yellow' 
+        } else if (div.children.length > 2) {
+            div.style.backgroundColor = 'grey' 
+        }
+    });
+</script>
+</body>
+</html>
