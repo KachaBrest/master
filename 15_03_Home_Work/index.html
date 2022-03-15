@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inputblock">
+        <input type="text" class="myInput" placeholder="Enter the text">
+        <button class="clickButton">Click</button>
+      </div>
+    
+    <script>
+        document.querySelector("button").onclick = myClick;
+        
+        function myClick() {
+            let inputText = document.querySelector(".myInput").value;
+            if ( inputText == '') {
+                alert('Введите текст');
+            } else {
+                let ul = document.createElement('ul');
+                document.body.appendChild(ul);
+
+                let li = document.createElement('li');
+                ul.appendChild(li);
+                li.textContent = inputText;
+
+            };
+            document.querySelector(".myInput").value = '';
+        };
+        
+    </script>
+</body>
+</html>

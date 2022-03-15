@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>add</button>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      
+    </ul>
+
+    <script>
+      
+        const ul = document.body.querySelector('ul');
+        ul.addEventListener('click', (event) => {
+            if(event.target.tagName === 'LI') {
+                const collorRandom = '#' + (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
+                event.target.style.backgroundColor = collorRandom;
+            }
+        })
+        const button = document.body.querySelector('button');
+        button.addEventListener('click', ()=>{
+            const li = document.createElement('li');
+            li.textContent = Math.random();
+            ul.append(li);
+        })
+    </script>
+
+</body>
+</html>

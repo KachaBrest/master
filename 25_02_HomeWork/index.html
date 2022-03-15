@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let header = document.createElement('header');
+        let nav = document.createElement('nav');
+        let ul = document.createElement('ul');
+        document.body.append(header);
+        header.append(nav);
+        nav.append(ul);
+        ul.className = 'head-menu';
+        let main = document.createElement('main');
+        main.className = 'container';
+        let article = document.createElement('article');
+        let aside  = document.createElement('aside');
+        aside.className = 'sidebar';
+        document.body.append(main);
+        main.append(article);
+        main.append(aside);
+        let h1 = document.createElement('h1');
+        h1.textContent = 'title';
+        let p = document.createElement('p');
+        p.textContent = 'content';
+        let ulAside = document.createElement('ul');
+        article.append(h1);
+        article.append(p);
+        aside.appendChild(ulAside);
+        for (let i = 1; i < 8; i++) {
+            let li = document.createElement('li');
+             if ( i < 5) {
+                li.textContent = 'page'+i;
+                ul.append(li);
+             } else if ( i > 4 && i < 8) {
+                let n = i - 4;
+                li.textContent = 'post'+ n;
+                ulAside.append(li)
+             };
+        };
+        
+
+    </script>
+</body>
+</html>

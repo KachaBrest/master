@@ -1,0 +1,39 @@
+<!-- Задача
+Написать функцию, которая строит таблицу n (кол-во столбцов) на k (кол-во строк), используя Javascript. 
+В каждую ячийку записать текст типа ‘n - k’ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tableCreate(tb, td) {
+            let table = document.createElement("table");
+            let tbody = document.createElement("tbody");
+            let = tb;
+            let = td;
+            for (var j = 0; j < tb; j++) {
+              var row = document.createElement("tr");
+          
+              for (var i = 0; i < td; i++) {
+                var cell = document.createElement("td");
+                var cellText = document.createTextNode("строка " + (j+1) + ", столбец " + (i+1));
+          
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+              }
+              tbody.appendChild(row);
+            }
+            table.appendChild(tbody);
+            document.body.appendChild(table);
+            table.setAttribute("border", "1");
+        };
+        tableCreate(2, 4);
+    </script>
+</body>
+</html>

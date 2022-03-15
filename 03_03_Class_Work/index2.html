@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let buttonPush;
+        let buttonSelect;
+
+        function createTable(td,tb){
+            let table = document.createElement("table");
+            let tbody = document.createElement("tbody");
+            let = tb;
+            let = td;
+            for (var j = 0; j <= tb; j++) {
+                var row = document.createElement("tr");
+            
+                for (var i = 0; i <= td; i++) {
+                  const cell = document.createElement("td");
+                  if (j == 0) {
+                    let cellText = document.createTextNode("col" + (i+1));
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                    if (i == td) {
+                        cellText.textContent = 'action';
+                        cell.appendChild(cellText);
+                        row.appendChild(cell);
+                    }
+                   } else if (j==tb) {
+                    buttonSelect = document.createElement('button');
+                    let butInText = document.createTextNode('select');
+                    buttonSelect.appendChild(butInText);
+                    cell.appendChild(buttonSelect);
+                    row.appendChild(cell);
+                    } else {
+                    let cellText = document.createTextNode(j + '-' + (i+1));
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                    }
+                   
+                    if ( i == td && j != 0) {
+                        cell.textContent = '';
+                        buttonPush = document.createElement('button');
+                        let  butInText = document.createTextNode('Push');
+                        buttonPush.appendChild(butInText);
+                        cell.appendChild(buttonPush);
+                        row.appendChild(cell);
+
+                    }
+                }
+                tbody.appendChild(row);
+              }
+              table.appendChild(tbody);
+              document.body.appendChild(table);
+              table.setAttribute("border", "1");             
+            };
+            createTable(10, 12); 
+            
+
+
+            table.addEventListener('click', (event)=>{
+                if (event.target.tagName === 'BUTTON') {
+                    event.target.closestckgroundColor = 'red'
+              }
+            });  
+
+    </script>
+</body>
+</html>

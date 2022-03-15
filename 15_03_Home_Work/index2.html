@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        img{
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 50vw;
+            height: auto;
+        }
+    </style>
+    <script>
+        const images = [
+                        'https://www.desktopbackground.org/download/1366x768/2013/03/16/545725_jestingstock-com-harley-davidson-motorcycle-wallpapers_1500x1032_h.jpg',
+                        'https://www.wallpapertip.com/wmimgs/252-2523986_wallpaper-honda-cbr1000rr-white-bike-side-view.jpg',
+                        'https://www.desktopbackground.org/download/1366x768/2012/01/18/330230_motorcycles-desktop-wallpapers-harley-davidson-softail-deluxe-2014_3840x2160_h.jpg',
+                        'https://www.desktopbackground.org/download/1366x768/2013/05/20/579310_hd-cool-streetfighter-bike-wallpapers-1920-1080-full-size_1920x1080_h.jpg',
+                        'https://img1.goodfon.ru/original/1366x768/4/e5/triumph-thunderbirb-motocikl.jpg',
+        ];
+        let img = document.createElement('img');
+        let n = 0;
+        img.src = images[n];
+        document.body.appendChild(img);
+        
+        document.querySelector('img').onclick = myClick;
+        
+        function myClick() {
+            n = n + 1;
+            if (n >= images.length) {
+                n = 0;
+                img.src = images[n];
+            } else {
+                img.src = images[n];
+            }
+        };
+
+    </script>
+</body>
+</html>

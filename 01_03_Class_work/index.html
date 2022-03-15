@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>0</p>
+    <input id="minus" type="button" value="-">
+    <input id="plus" type="button" value="+">
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        const li = document.body.querySelectorAll('li'); // получаем все li элементы в массиве
+        function headle(e) {
+            this.style.backgroundColor = 'green';
+        };
+
+        function headle1(e) {
+            this.style.backgroundColor = '';
+        };
+
+        li.forEach(i => i.addEventListener('click', headle));
+        
+       
+
+        const p = document.body.querySelector('p');
+        let i = 1;
+        p.textContent = i;
+
+        const bottMin = document.body.querySelector('#minus');
+        const bottPl = document.body.querySelector('#plus');
+        
+        function touchPl() {
+            i++
+            p.textContent = i;
+        };
+        function touchMin() {
+            i--
+            p.textContent = i;
+        };
+
+        document.addEventListener('contextmenu', touchMin);
+        document.addEventListener('click', touchPl);
+
+    </script>
+</body>
+</html>
