@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cat = [
+            'https://lapkins.ru/upload/resize_cache/iblock/279/1024_500_2/27909e2ec654fdec7e45ded44c45e574.jpg',
+            'https://disgustingmen.com/wp-content/uploads/2019/05/viking-cats-1.jpg',
+            'https://tlum.ru/uploads/22fa9437434982ea805c89581a59f5487dff254c222261114e9668c829225a9f.jpeg',
+        ];
+
+        function loading(url) {
+            return new Promise(function(resolve,reject) {
+                const img = document.createElement('img');
+                img.src = url;
+                img.onerror = () => {
+                    reject('error!')
+                };
+                img.onload = () => {
+                    resolve(img)
+                };
+            });
+        }
+
+        const promises = cat.map(img => loading(img));
+        console.log(promises);
+
+        Promise.any(promises)
+        .then((images) => {
+            //images.forEach(i=>document.body.append(i))
+            document.body.append(images)
+            })
+        
+    </script>
+</body>
+</html>

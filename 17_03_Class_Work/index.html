@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch('https://randomuser.me/api/')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            const img = document.createElement('img');
+            img.src = data.results[0].picture.medium;
+            document.body.append(img);
+            console.log(img);
+            const p = document.createElement('p');
+            p.textContent = data.results[0].name.first + ' ' + data.results[0].name.last;
+            document.body.append(p);
+            console.log(data.results[0].name.first);
+            console.log(p.textContent);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <style>
+          body {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+          };
+      </style>
+    <script>
+      const pic = [
+        "https://avatars.mds.yandex.net/i?id=180cbc3377ba39521e5e742b255fdbf6-4432642-images-thumbs&ref=rim&n=33&w=232&h=150",
+        "https://i.ytimg.com/vi/sGZ9X0AHOAk/maxresdefault.jpg",
+        "https://www.roc21.com/blog/wp-content/uploads/2015/07/disfraz-perro-universo-marvel-seis.jpg",
+        "https://avatars.mds.yandex.net/i?id=9921c9705d36cb7fcf254217b478155c-4821174-images-thumbs&ref=rim&n=33&w=225&h=150",
+        "https://avatars.mds.yandex.net/i?id=56141030a1c560d7e9a59e3312f7406e-4429068-images-thumbs&ref=rim&n=33&w=232&h=150",
+      ];
+      let i = 0;
+      // функция, которую нужно реализовать
+      function superDog() {
+        const img = document.createElement("img");
+        img.src = pic[i];
+        document.body.append(img);
+        i++;
+        img.style.width = '250px';
+      }
+      const sleep = (ms) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, ms);
+        });
+      };
+
+      sleep(5000).then(() => {
+        // её использование для выполнения действия с задержкой 5 секунд
+        superDog();
+        console.log("Выполнилось через 5 секунд!");
+      });
+
+      sleep(15000).then(() => {
+        // её использование для выполнения действия с задержкой 10 секунд
+        superDog();
+        console.log("Выполнилось через 10 секунд!");
+      });
+      sleep(20000).then(() => {
+        // её использование для выполнения действия с задержкой 10 секунд
+        superDog();
+        console.log("Выполнилось через 15 секунд!");
+      });
+      sleep(25000).then(() => {
+        // её использование для выполнения действия с задержкой 10 секунд
+        superDog();
+        console.log("Выполнилось через 20 секунд!");
+      });
+      sleep(30000).then(() => {
+        // её использование для выполнения действия с задержкой 10 секунд
+        superDog();
+        console.log("Выполнилось через 25 секунд!");
+      });
+    </script>
+  </body>
+</html>
